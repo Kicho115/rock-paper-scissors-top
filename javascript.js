@@ -16,6 +16,8 @@ function playRound(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
         console.log(tieMessage);
         return;
+    } else if (!possibleChoices.includes(playerChoice)) {
+        console.log(invalidInputMessage);
     }
 
     switch(playerChoice) {
@@ -24,8 +26,6 @@ function playRound(playerChoice, computerChoice) {
                 console.log(winMessage);
             } else if (computerChoice == 'paper') {
                 console.log(defeatMessage);
-            } else {
-                console.log(invalidInputMessage);
             }
             break;
         case 'paper':
@@ -33,8 +33,6 @@ function playRound(playerChoice, computerChoice) {
                     console.log(winMessage);
                 } else if (computerChoice == 'scissors') {
                     console.log(defeatMessage);
-                } else {
-                    console.log(invalidInputMessage);
                 }
                 break;
         case 'scissors':
@@ -42,8 +40,6 @@ function playRound(playerChoice, computerChoice) {
                 console.log(winMessage);
             } else if (computerChoice == 'rock') {
                 console.log(defeatMessage);
-            } else {
-                console.log(invalidInputMessage);
             }
             break;
         
