@@ -45,3 +45,10 @@ function playRound(playerChoice, computerChoice) {
 
 }
 
+function game() {
+    for (let i = 0; i < 5; i++) {
+        playRound(getPlayerChoice(), computerChoice)
+    }
+}
+
+game()
