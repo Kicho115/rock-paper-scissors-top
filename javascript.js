@@ -1,8 +1,8 @@
 let possibleChoices = ['rock', 'paper', 'scissors'];
-let randomChoice = possibleChoices[Math.floor(Math.random() * possibleChoices.length)];
+let randomChoice = () => possibleChoices[Math.floor(Math.random() * possibleChoices.length)];
 
-let computerChoice = randomChoice;
-let playerChoice = prompt('Rock, Paper or Scissors?', randomChoice);
+let computerChoice = randomChoice();
+let getPlayerChoice = () => prompt('Rock, Paper or Scissors?', randomChoice());
 
 function playRound(playerChoice, computerChoice) {
     // Make the player choice case-insensitive
@@ -45,4 +45,3 @@ function playRound(playerChoice, computerChoice) {
 
 }
 
-playRound(playerChoice, computerChoice)
