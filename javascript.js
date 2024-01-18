@@ -4,6 +4,8 @@ let randomChoice = possibleChoices[Math.floor(Math.random() * possibleChoices.le
 let computerChoice = randomChoice;
 let playerChoice = prompt('Rock, Paper or Scissors?', randomChoice);
 
-function playRound(playerChoise, computerChoice) {
+let winMessage =   `You Win! ${computerChoice} beats ${playerChoice}`;
+let defeatMessage = `You Lose! ${computerChoice} beats ${playerChoice}`;
+let tieMessage = "It's a Tie!";
 
-}
+
