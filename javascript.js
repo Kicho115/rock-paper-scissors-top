@@ -8,36 +8,42 @@ function playRound(playerChoice, computerChoice) {
     // Make the player choice case-insensitive
     playerChoice = playerChoice.toLowerCase();
 
-    let winMessage =   `You Win! ${computerChoice} beats ${playerChoice}`;
+    let winMessage =   `You Win! ${playerChoice} beats ${computerChoice}`;
     let defeatMessage = `You Lose! ${computerChoice} beats ${playerChoice}`;
     let tieMessage = "It's a Tie!";
+    let invalidInputMessage = `${playerChoice} is not a valid input`;
+
+    if (playerChoice === computerChoice) {
+        console.log(tieMessage);
+        return;
+    }
 
     switch(playerChoice) {
         case 'rock':
-            if (computerChoice == 'scissors') {
-                console.log(winMessage)
+            if (computerChoice === 'scissors') {
+                console.log(winMessage);
             } else if (computerChoice == 'paper') {
-                console.log(defeatMessage)
+                console.log(defeatMessage);
             } else {
-                console.log(tieMessage)
+                console.log(invalidInputMessage);
             }
             break;
         case 'paper':
                 if (computerChoice == 'rock') {
-                    console.log(winMessage)
+                    console.log(winMessage);
                 } else if (computerChoice == 'scissors') {
-                    console.log(defeatMessage)
+                    console.log(defeatMessage);
                 } else {
-                    console.log(tieMessage)
+                    console.log(invalidInputMessage);
                 }
                 break;
         case 'scissors':
             if (computerChoice == 'paper') {
-                console.log(winMessage)
+                console.log(winMessage);
             } else if (computerChoice == 'rock') {
-                console.log(defeatMessage)
+                console.log(defeatMessage);
             } else {
-                console.log(tieMessage)
+                console.log(invalidInputMessage);
             }
             break;
         
