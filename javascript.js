@@ -4,6 +4,9 @@ let randomChoice = () => possibleChoices[Math.floor(Math.random() * possibleChoi
 let computerChoice = randomChoice();
 let getPlayerChoice = () => prompt('Rock, Paper or Scissors?', randomChoice());
 
+let playerScore = 0;
+let computerScore = 0;
+
 function playRound(playerChoice, computerChoice) {
     // Make the player choice case-insensitive
     playerChoice = playerChoice.toLowerCase();
@@ -24,22 +27,28 @@ function playRound(playerChoice, computerChoice) {
         case 'rock':
             if (computerChoice === 'scissors') {
                 console.log(winMessage);
-            } else if (computerChoice == 'paper') {
+                playerScore++;
+            } else if (computerChoice === 'paper') {
                 console.log(defeatMessage);
+                computerScore++;
             }
             break;
         case 'paper':
-                if (computerChoice == 'rock') {
+                if (computerChoice === 'rock') {
                     console.log(winMessage);
-                } else if (computerChoice == 'scissors') {
+                    playerScore++;
+                } else if (computerChoice === 'scissors') {
                     console.log(defeatMessage);
+                    computerScore++;
                 }
                 break;
         case 'scissors':
-            if (computerChoice == 'paper') {
+            if (computerChoice === 'paper') {
                 console.log(winMessage);
-            } else if (computerChoice == 'rock') {
+                playerScore++;
+            } else if (computerChoice === 'rock') {
                 console.log(defeatMessage);
+                computerScore++;
             }
             break;
         
@@ -49,8 +58,11 @@ function playRound(playerChoice, computerChoice) {
 
 function game() {
     for (let i = 0; i < 5; i++) {
-        playRound(getPlayerChoice(), computerChoice)
+        playRound(getPlayerChoice(), computerChoice);
     }
+
+    console.log(`Score:
+    Player: ${playerScore} -- Computer: ${computerScore}`);
 }
 
-game()
+game();
