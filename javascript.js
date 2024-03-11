@@ -1,11 +1,16 @@
 let possibleChoices = ['rock', 'paper', 'scissors'];
 let randomChoice = () => possibleChoices[Math.floor(Math.random() * possibleChoices.length)];
 
-let computerChoice = randomChoice();
-let getPlayerChoice = () => prompt('Rock, Paper or Scissors?', randomChoice());
-
 let playerScore = 0;
 let computerScore = 0;
+
+let selections = document.getElementById('selections');
+
+selections.addEventListener('click', (e) => {
+    let computerChoice = randomChoice();
+    let playerChoice = e.target.id;
+    playRound(playerChoice, computerChoice);
+});
 
 function playRound(playerChoice, computerChoice) {
     // Make the player choice case-insensitive
@@ -55,14 +60,3 @@ function playRound(playerChoice, computerChoice) {
     }
 
 }
-
-function game() {
-    for (let i = 0; i < 5; i++) {
-        playRound(getPlayerChoice(), computerChoice);
-    }
-
-    console.log(`Score:
-    Player: ${playerScore} -- Computer: ${computerScore}`);
-}
-
-game();
