@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(72, 0, 0);
+}
+
+.title {
+    text-align: center;
+    color: white;
+    padding: 40px;
+    font-size: 52px;
+}
+
+#selections {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 10px 300px;
+}
+
+#selections > button {
+    border: 2px solid white ;
+    border-radius: 3px;
+    padding: 8px 16px;
+    margin: 10px;
+    width: 200px;
+    background-color: transparent;
+    color: white;
+    font-weight: 900;
+    text-align: center;
+    font-size: 26px;
+} 
+
+#selections > button:hover {
+    cursor: pointer;
+    background-color: rgb(154, 109, 109);
+    transition: background-color 0.5s ease;
+}
