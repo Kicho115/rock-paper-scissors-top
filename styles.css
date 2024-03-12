@@ -67,3 +67,41 @@ body {
     background-color: rgb(154, 109, 109);
     transition: background-color 0.5s ease;
 }
+
+.gameOver {
+    display: none; /* Flex when the game is over */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.250);
+    padding: 40px;
+    margin: 40px 40%;
+    border-radius: 20px;
+}
+
+.gameOver > p {
+    color: white;
+    text-align: center;
+    font-size: 32px;
+    padding: 20px 0px;
+}
+
+.gameOver > button {
+    border: 2px solid white ;
+    border-radius: 3px;
+    padding: 8px 0px;
+    margin: 10px;
+    width: 200px;
+    background-color: transparent;
+    color: white;
+    font-weight: 900;
+    text-align: center;
+    font-size: 26px;
+    border-radius: 20px;
+}
+
+.gameOver > button:hover {
+    cursor: pointer;
+    background-color: rgb(154, 109, 109);
+    transition: background-color 0.5s ease;
+}

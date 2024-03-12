@@ -15,11 +15,18 @@ let computerScoreDisplay = document.getElementById('computerScore');
 let playerChoiceIcon = document.getElementById('playerChoice');
 let computerChoiceIcon = document.getElementById('computerChoice');
 let message = document.getElementById('message');
+let gameOver = document.getElementById('gameOver');
+let gameOverMessage = document.getElementById('gameOverMessage');
+let playAgainButton = document.getElementById('playAgainButton');
+let isGameOver = false;
 
 let selections = document.getElementById('selections');
 
 // Game
 selections.addEventListener('click', (e) => {
+    if (isGameOver || e.target.id === 'selections') {
+        return;
+    }
     let computerChoice = randomChoice();
     let playerChoice = e.target.id;
     playerChoiceIcon.innerText = possibleChoicesIcons[playerChoice];
@@ -90,14 +97,28 @@ function playRound(playerChoice, computerChoice) {
 function scoreCheck() {
     if (playerScore === 5) {
         // player wins
-        console.log('ganas');
+        gameOver.style.display = 'flex';
+        playAgainButton.addEventListener('click', restartGame);
+        gameOverMessage.innerText = 'You Win!';
+        isGameOver = true;
     }
     else if (computerScore === 5) {
-        //computer wins
-        console.log('pierdes');
+        // computer wins
+        gameOver.style.display = 'flex';
+        playAgainButton.addEventListener('click', restartGame);
+        gameOverMessage.innerText = 'You Lose!';
+        isGameOver = true;
     }
 }
 
 function restartGame() {
-    
+    playerScore = 0;
+    computerScore = 0;
+    playerScoreDisplay.innerText = playerScore;
+    computerScoreDisplay.innerText = computerScore;
+    playerChoiceIcon.innerText = '❔';
+    computerChoiceIcon.innerText = '❔';
+    message.innerText = '';
+    gameOver.style.display = 'none';
+    isGameOver = false;
 }
