@@ -14,6 +14,12 @@ body {
     font-size: 52px;
 }
 
+#message {
+    color: white;
+    text-align: center;
+    font-size: 32px;
+}
+
 #score {
     color: white;
     text-align: center;
@@ -29,6 +35,11 @@ body {
 
 #playerChoice, #computerChoice {
     border: 3px solid white;
+}
+
+#playerScore, #computerScore {
+    text-align: center;
+    color: white;
 }
 
 #selections {
